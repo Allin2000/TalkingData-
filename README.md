@@ -13,7 +13,6 @@ from sklearn.metrics import log_loss
 gatrain = pd.read_csv(('gender_age_train.csv'),index_col='device_id')
 gatest = pd.read_csv(('gender_age_test.csv'),index_col = 'device_id')
 phone = pd.read_csv(('phone_brand_device_model.csv'))
-# Get rid of duplicate device ids in phone
 phone = phone.drop_duplicates('device_id',keep='first').set_index('device_id')
 events = pd.read_csv(('events.csv'),parse_dates=['timestamp'], index_col='event_id')
 appevents = pd.read_csv(('app_events.csv'), 
